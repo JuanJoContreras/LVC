@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confederación La Voz del Campo Chile — Agricultura Familiar Campesina</title>
+<meta name="description" content="Confederación Nacional de la Agricultura Familiar Campesina. Fundada en 1991, representa a pequeños productores campesinos e indígenas de todo Chile.">
+<meta property="og:title" content="Confederación La Voz del Campo Chile">
+<meta property="og:description" content="34 años representando a la Agricultura Familiar Campesina de Chile.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#2D6A4F;
+  --verde-osc:#1B3324;
+  --verde-prof:#14261B;
+  --verde-med:#40916C;
+  --verde-cla:#D8F3DC;
+  --oro:#C9A227;
+  --oro-cla:#E6C65B;
+  --crema:#F7F4EC;
+  --tierra:#8B6B4A;
+  --tinta:#1F2622;
+  --gris:#5B6560;
+  --linea:#E4E0D4;
+  --blanco:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--tinta);
+  background:var(--crema);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Fraunces',serif;font-weight:600;line-height:1.1;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* ===== NAVBAR ===== */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 40px; transition:.35s;
+  background:transparent;
+}
+.nav.scrolled{
+  background:rgba(27,51,36,.96); backdrop-filter:blur(10px);
+  padding:12px 40px; box-shadow:0 4px 30px rgba(0,0,0,.15);
+}
+.nav .brand{ display:flex; align-items:center; gap:12px; }
+.nav .brand-mark{
+  width:44px; height:44px; border-radius:50%;
+  background:var(--oro); color:var(--verde-osc);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Fraunces',serif; font-weight:700; font-size:17px;
+  flex-shrink:0;
+}
+.nav .brand-text{ color:#fff; line-height:1.15; }
+.nav .brand-text strong{ display:block; font-size:15px; font-weight:600; letter-spacing:.3px; }
+.nav .brand-text span{ display:block; font-size:10px; color:var(--verde-cla); letter-spacing:1.5px; text-transform:uppercase; }
+.nav-links{ display:flex; align-items:center; gap:32px; }
+.nav-links a{ color:rgba(255,255,255,.85); font-size:14px; font-weight:500; transition:.2s; }
+.nav-links a:hover{ color:var(--oro-cla); }
+.nav-cta{
+  background:var(--oro); color:var(--verde-osc)!important;
+  padding:10px 22px; border-radius:6px; font-weight:600!important; font-size:13px!important;
+  transition:.25s;
+}
+.nav-cta:hover{ background:var(--oro-cla); transform:translateY(-1px); }
+.nav-toggle{ display:none; flex-direction:column; gap:5px; cursor:pointer; }
+.nav-toggle span{ width:26px; height:2px; background:#fff; transition:.3s; }
+
+/* ===== HERO ===== */
+.hero{
+  position:relative; min-height:100vh;
+  display:flex; align-items:center;
+  padding:120px 40px 80px;
+  overflow:hidden;
+  background:var(--verde-prof);
+}
+.hero-carousel{ position:absolute; inset:0; z-index:0; }
+.hero-slide{
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+  opacity:0; transition:opacity 1.6s ease-in-out;
+}
+.hero-slide.active{ opacity:1; }
+.hero-overlay{
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(115deg, rgba(20,38,27,.94) 0%, rgba(27,51,36,.82) 45%, rgba(45,106,79,.55) 100%);
+}
+.hero::after{
+  content:''; position:absolute; right:-8%; top:8%;
+  width:520px; height:520px; border-radius:50%;
+  background:radial-gradient(circle, rgba(201,162,39,.16), transparent 68%);
+  pointer-events:none; z-index:1;
+}
+.hero-inner{ max-width:1180px; margin:0 auto; width:100%; position:relative; z-index:2; }
+.hero .eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:12px; letter-spacing:3px; text-transform:uppercase;
+  color:var(--oro-cla); font-weight:600; margin-bottom:24px;
+}
+.hero .eyebrow::before{ content:''; width:32px; height:1px; background:var(--oro); }
+.hero h1{
+  font-size:clamp(38px,6vw,74px); color:#fff; max-width:14ch;
+  margin-bottom:26px; font-weight:600;
+}
+.hero h1 em{ font-style:italic; color:var(--oro-cla); font-weight:400; }
+.hero p.lede{
+  font-size:clamp(16px,2vw,20px); color:rgba(255,255,255,.82);
+  max-width:56ch; margin-bottom:38px; line-height:1.7;
+}
+.hero-cta{ display:flex; gap:16px; flex-wrap:wrap; }
+.btn{
+  display:inline-flex; align-items:center; gap:9px;
+  padding:15px 30px; border-radius:7px; font-weight:600; font-size:15px;
+  transition:.28s; border:1.5px solid transparent; cursor:pointer;
+}
+.btn-primary{ background:var(--oro); color:var(--verde-osc); }
+.btn-primary:hover{ background:var(--oro-cla); transform:translateY(-2px); box-shadow:0 10px 30px -8px rgba(201,162,39,.55); }
+.btn-ghost{ background:transparent; color:#fff; border-color:rgba(255,255,255,.4); }
+.btn-ghost:hover{ border-color:#fff; background:rgba(255,255,255,.08); }
+.btn .arw{ transition:.25s; }
+.btn:hover .arw{ transform:translateX(4px); }
+
+/* hero stats */
+.hero-stats{
+  display:flex; gap:44px; margin-top:58px; flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.15); padding-top:32px;
+}
+.hero-stat .num{ font-family:'Fraunces',serif; font-size:38px; color:var(--oro-cla); font-weight:600; }
+.hero-stat .lab{ font-size:13px; color:rgba(255,255,255,.7); margin-top:2px; }
+
+/* ===== REVEAL ANIM ===== */
+.reveal{ opacity:0; transform:translateY(34px); transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+.reveal.in{ opacity:1; transform:none; }
+.reveal.d1{ transition-delay:.08s; } .reveal.d2{ transition-delay:.16s; }
+.reveal.d3{ transition-delay:.24s; } .reveal.d4{ transition-delay:.32s; }
+@media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+/* ===== SECTION BASE ===== */
+.section{ padding:100px 40px; }
+.container{ max-width:1180px; margin:0 auto; }
+.sec-head{ max-width:640px; margin-bottom:56px; }
+.sec-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+.sec-eyebrow{
+  font-size:12px; letter-spacing:3px; text-transform:uppercase;
+  color:var(--verde); font-weight:700; margin-bottom:14px; display:block;
+}
+.sec-head h2{ font-size:clamp(28px,4vw,44px); color:var(--verde-osc); margin-bottom:16px; }
+.sec-head p{ font-size:17px; color:var(--gris); line-height:1.7; }
+
+/* ===== QUIÉNES SOMOS ===== */
+.somos{ background:var(--blanco); }
+.somos-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:center; }
+.somos-text p{ font-size:17px; color:var(--gris); margin-bottom:20px; line-height:1.8; }
+.somos-text p strong{ color:var(--verde-osc); font-weight:600; }
+.somos-highlights{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.hl-card{
+  background:var(--crema); border:1px solid var(--linea); border-radius:14px;
+  padding:26px 24px; transition:.3s;
+}
+.hl-card:hover{ transform:translateY(-4px); box-shadow:0 18px 40px -18px rgba(27,51,36,.25); border-color:var(--verde-med); }
+.hl-card .ic{ font-size:26px; margin-bottom:12px; }
+.hl-card h3{ font-size:19px; color:var(--verde-osc); margin-bottom:6px; font-weight:600; }
+.hl-card p{ font-size:14px; color:var(--gris); line-height:1.6; }
+
+/* ===== DIRECTORIO ===== */
+.directorio{ background:var(--crema); }
+.dir-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:28px; }
+.dir-card{
+  background:var(--blanco); border-radius:16px; overflow:hidden;
+  border:1px solid var(--linea); transition:.32s;
+}
+.dir-card:hover{ transform:translateY(-6px); box-shadow:0 24px 50px -22px rgba(27,51,36,.32); }
+.dir-photo{
+  aspect-ratio:1/1; background:linear-gradient(150deg,var(--verde-med),var(--verde-osc));
+  display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+}
+.dir-photo img{ width:100%; height:100%; object-fit:cover; }
+.dir-photo .ph-placeholder{
+  font-family:'Fraunces',serif; font-size:52px; color:rgba(255,255,255,.55); font-weight:600;
+}
+.dir-photo .ph-note{
+  position:absolute; bottom:0; left:0; right:0;
+  background:rgba(20,38,27,.8); color:var(--verde-cla); font-size:10px;
+  text-align:center; padding:5px; letter-spacing:.5px;
+}
+.dir-info{ padding:18px 20px 22px; }
+.dir-info .name{ font-family:'Fraunces',serif; font-size:19px; color:var(--verde-osc); font-weight:600; }
+.dir-info .role{ font-size:13px; color:var(--oro); font-weight:600; margin-top:3px; }
+.dir-info .region{ font-size:12px; color:var(--gris); margin-top:4px; }
+
+/* ===== EVENTOS ===== */
+.eventos{ background:var(--verde-osc); position:relative; overflow:hidden; }
+.eventos::before{
+  content:''; position:absolute; left:-6%; bottom:-10%;
+  width:400px; height:400px; border-radius:50%;
+  background:radial-gradient(circle, rgba(45,106,79,.4), transparent 68%);
+}
+.eventos .sec-eyebrow{ color:var(--oro-cla); }
+.eventos .sec-head h2{ color:#fff; }
+.eventos .sec-head p{ color:rgba(255,255,255,.72); }
+.ev-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:28px; position:relative; z-index:2; }
+.ev-card{
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12);
+  border-radius:16px; overflow:hidden; transition:.32s;
+}
+.ev-card:hover{ transform:translateY(-6px); background:rgba(255,255,255,.07); border-color:var(--oro); }
+.ev-img{
+  height:190px; background:linear-gradient(135deg,var(--verde-med),var(--verde-prof));
+  display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+}
+.ev-img img{ width:100%; height:100%; object-fit:cover; }
+.ev-img .ph-ic{ font-size:44px; opacity:.4; }
+.ev-img .ph-note{
+  position:absolute; bottom:8px; right:8px;
+  background:rgba(201,162,39,.9); color:var(--verde-osc); font-size:10px; font-weight:600;
+  padding:4px 10px; border-radius:20px;
+}
+.ev-body{ padding:22px 24px 26px; }
+.ev-body .date{ font-size:12px; color:var(--oro-cla); font-weight:600; letter-spacing:.5px; text-transform:uppercase; }
+.ev-body h3{ font-size:20px; color:#fff; margin:8px 0 10px; font-weight:600; }
+.ev-body p{ font-size:14px; color:rgba(255,255,255,.72); line-height:1.65; }
+
+/* ===== CONTACTO ===== */
+.contacto{ background:var(--blanco); }
+.cont-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; }
+.cont-info h2{ font-size:clamp(28px,4vw,40px); color:var(--verde-osc); margin-bottom:18px; }
+.cont-info p{ font-size:16px; color:var(--gris); margin-bottom:30px; line-height:1.7; }
+.cont-item{ display:flex; gap:14px; align-items:flex-start; margin-bottom:20px; }
+.cont-item .ic{
+  width:44px; height:44px; border-radius:10px; background:var(--verde-cla);
+  display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;
+}
+.cont-item .txt strong{ display:block; font-size:14px; color:var(--verde-osc); font-weight:600; }
+.cont-item .txt span{ font-size:14px; color:var(--gris); }
+.cont-form{
+  background:var(--crema); border:1px solid var(--linea); border-radius:18px; padding:36px;
+}
+.cont-form h3{ font-size:22px; color:var(--verde-osc); margin-bottom:6px; font-weight:600; }
+.cont-form .sub{ font-size:14px; color:var(--gris); margin-bottom:24px; }
+.field{ margin-bottom:18px; }
+.field label{ display:block; font-size:13px; color:var(--verde-osc); font-weight:600; margin-bottom:7px; }
+.field input, .field textarea{
+  width:100%; padding:13px 16px; border:1.5px solid var(--linea); border-radius:9px;
+  font-family:'Inter',sans-serif; font-size:14px; color:var(--tinta); background:#fff;
+  transition:.2s; resize:vertical;
+}
+.field input:focus, .field textarea:focus{ outline:none; border-color:var(--verde-med); box-shadow:0 0 0 3px rgba(64,145,108,.12); }
+.cont-form .btn-primary{ width:100%; justify-content:center; margin-top:4px; }
+.form-note{ font-size:12px; color:var(--gris); text-align:center; margin-top:14px; }
+
+/* ===== FOOTER ===== */
+.footer{ background:var(--verde-prof); color:rgba(255,255,255,.75); padding:56px 40px 30px; }
+.foot-grid{ max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:44px; padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,.1); }
+.foot-brand{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+.foot-brand .m{ width:44px; height:44px; border-radius:50%; background:var(--oro); color:var(--verde-osc); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; }
+.foot-brand strong{ color:#fff; font-family:'Fraunces',serif; font-size:17px; }
+.foot-col p{ font-size:14px; line-height:1.7; }
+.foot-col h4{ color:#fff; font-size:14px; font-weight:600; margin-bottom:16px; letter-spacing:.5px; }
+.foot-col a{ display:block; font-size:14px; margin-bottom:10px; transition:.2s; }
+.foot-col a:hover{ color:var(--oro-cla); }
+.foot-bottom{ max-width:1180px; margin:24px auto 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12px; color:rgba(255,255,255,.5); }
+.foot-bottom a:hover{ color:var(--oro-cla); }
+
+/* ===== AGROTECH ===== */
+.agrotech{ background:var(--blanco); position:relative; }
+.agro-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
+.agro-card{
+  background:var(--crema); border:1px solid var(--linea); border-radius:16px;
+  padding:30px 26px; transition:.3s;
+}
+.agro-card:hover{ transform:translateY(-4px); box-shadow:0 20px 44px -20px rgba(27,51,36,.28); border-color:var(--oro); }
+.agro-card .ic{
+  width:52px; height:52px; border-radius:12px; background:var(--verde-cla);
+  display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:16px;
+}
+.agro-card h3{ font-size:19px; color:var(--verde-osc); margin-bottom:8px; font-weight:600; }
+.agro-card p{ font-size:14px; color:var(--gris); line-height:1.65; }
+.agro-badge{
+  display:inline-flex; align-items:center; gap:8px; background:var(--verde-cla); color:var(--verde-osc);
+  font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  padding:8px 16px; border-radius:20px; margin-top:12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .somos-grid, .cont-grid{ grid-template-columns:1fr; gap:40px; }
+  .foot-grid{ grid-template-columns:1fr 1fr; }
+  .nav-links{ display:none; }
+  .nav-toggle{ display:flex; }
+}
+@media (max-width:560px){
+  .nav, .nav.scrolled{ padding:14px 20px; }
+  .hero{ padding:110px 22px 60px; }
+  .section{ padding:70px 22px; }
+  .hero-stats{ gap:28px; }
+  .hero-stat .num{ font-size:30px; }
+  .somos-highlights{ grid-template-columns:1fr; }
+  .foot-grid{ grid-template-columns:1fr; gap:30px; }
+  .cont-form{ padding:26px 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="nav" id="nav">
+  <a href="#inicio" class="brand">
+    <div class="brand-mark">VC</div>
+    <div class="brand-text">
+      <strong>La Voz del Campo</strong>
+      <span>Chile · 1991</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#somos">Quiénes Somos</a>
+    <a href="#directorio">Directorio</a>
+    <a href="#agrotech">Agrotech</a>
+    <a href="#eventos">Actividades</a>
+    <a href="#contacto" class="nav-cta">Contáctanos</a>
+  </div>
+  <div class="nav-toggle" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="inicio">
+  <div class="hero-carousel" id="heroCarousel">
+    <div class="hero-slide active" style="background-image:url('assets/img/campo1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/campo2.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/campo4.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/campo6.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="eyebrow reveal in">Confederación Nacional de la Agricultura Familiar Campesina</div>
+    <h1 class="reveal in d1">La voz de quienes <em>alimentan a Chile</em> desde el campo.</h1>
+    <p class="lede reveal in d2">
+      Desde 1991 representamos a los pequeños productores campesinos e indígenas de todo el territorio nacional,
+      defendiendo sus intereses y conquistando espacios para mejorar sus condiciones económicas y sociales.
+    </p>
+    <div class="hero-cta reveal in d3">
+      <a href="#contacto" class="btn btn-primary">Súmate a la Confederación <span class="arw">→</span></a>
+      <a href="#somos" class="btn btn-ghost">Conócenos</a>
+    </div>
+    <div class="hero-stats reveal in d4">
+      <div class="hero-stat"><div class="num">34</div><div class="lab">años de historia gremial</div></div>
+      <div class="hero-stat"><div class="num">+250 mil</div><div class="lab">productores representados</div></div>
+      <div class="hero-stat"><div class="num">Nacional</div><div class="lab">presencia en todas las regiones</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== QUIÉNES SOMOS ===== -->
+<section class="section somos" id="somos">
+  <div class="container somos-grid">
+    <div class="somos-text reveal">
+      <span class="sec-eyebrow">Quiénes Somos</span>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(28px,4vw,42px);color:var(--verde-osc);margin-bottom:24px;">Una entidad gremial al servicio del campo chileno</h2>
+      <p>La <strong>Confederación La Voz del Campo</strong> es una entidad nacional de carácter gremial, fundada el 4 de noviembre de 1991, que agrupa a pequeños productores campesinos e indígenas en regiones, provincias, comunas y localidades de todo Chile.</p>
+      <p>Reunimos a <strong>asociaciones gremiales, cooperativas, empresas familiares y artesanos</strong> con un propósito común: defender los intereses de la Agricultura Familiar Campesina y conquistar espacios orientados a mejorar sus condiciones económicas y sociales.</p>
+      <p>Somos interlocutores del sector ante el Estado, el mundo público y la sociedad civil, llevando la voz de quienes producen el <strong>40% de los alimentos</strong> que consume nuestro país.</p>
+      <p><strong>Nuestra visión:</strong> ser líderes en el desarrollo integral de la agricultura familiar en Chile —incluyendo a jóvenes, mujeres e indígenas— alcanzando un estándar de modernización que armonice la eficiencia productiva con el respeto irrestricto al medioambiente.</p>
+    </div>
+    <div class="somos-highlights reveal d2">
+      <div class="hl-card"><div class="ic">🌾</div><h3>Agricultura Familiar</h3><p>Representamos al 92% de las explotaciones agrícolas de Chile.</p></div>
+      <div class="hl-card"><div class="ic">🤝</div><h3>Red Gremial</h3><p>Asociaciones, cooperativas y empresas familiares organizadas.</p></div>
+      <div class="hl-card"><div class="ic">🇨🇱</div><h3>Alcance Nacional</h3><p>Presencia en regiones, provincias y localidades del país.</p></div>
+      <div class="hl-card"><div class="ic">📜</div><h3>34 Años</h3><p>De trayectoria defendiendo al campesinado chileno.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIRECTORIO ===== -->
+<section class="section directorio" id="directorio">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Nuestra Mesa Directiva</span>
+      <h2>Quienes lideran la Confederación</h2>
+      <p>Dirigentes campesinos que representan a la Agricultura Familiar en cada rincón de Chile.</p>
+    </div>
+    <div class="dir-grid">
+      <!-- Reemplazar ph-placeholder por <img src="..."> cuando lleguen las fotos reales -->
+      <div class="dir-card reveal">
+        <div class="dir-photo"><div class="ph-placeholder">PM</div><div class="ph-note">Foto pendiente</div></div>
+        <div class="dir-info"><div class="name">Patricia Molina</div><div class="role">Presidenta</div><div class="region">Confederación Nacional</div></div>
+      </div>
+      <div class="dir-card reveal d1">
+        <div class="dir-photo"><div class="ph-placeholder">DM</div><div class="ph-note">Foto pendiente</div></div>
+        <div class="dir-info"><div class="name">Domingo Medina</div><div class="role">Vicepresidente</div><div class="region">—</div></div>
+      </div>
+      <div class="dir-card reveal d2">
+        <div class="dir-photo"><div class="ph-placeholder">RS</div><div class="ph-note">Foto pendiente</div></div>
+        <div class="dir-info"><div class="name">Rosa Sanhueza</div><div class="role">Directora</div><div class="region">—</div></div>
+      </div>
+      <div class="dir-card reveal d3">
+        <div class="dir-photo"><div class="ph-placeholder">LM</div><div class="ph-note">Foto pendiente</div></div>
+        <div class="dir-info"><div class="name">Luis Molina</div><div class="role">Director</div><div class="region">—</div></div>
+      </div>
+      <div class="dir-card reveal">
+        <div class="dir-photo"><div class="ph-placeholder">MM</div><div class="ph-note">Foto pendiente</div></div>
+        <div class="dir-info"><div class="name">Marco Molina</div><div class="role">Director</div><div class="region">—</div></div>
+      </div>
+      <div class="dir-card reveal d1">
+        <div class="dir-photo"><div class="ph-placeholder">+</div><div class="ph-note">Completar nómina</div></div>
+        <div class="dir-info"><div class="name">Directivo</div><div class="role">Cargo por confirmar</div><div class="region">—</div></div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:28px;font-size:13px;color:var(--gris);font-style:italic;">Las fotografías del directorio se cargarán una vez recibidas desde la Confederación.</p>
+  </div>
+</section>
+
+<!-- ===== AGROTECH (pendiente de definición final) ===== -->
+<section class="section agrotech" id="agrotech">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Hacia la Agrotech</span>
+      <h2>Modernizando el campo chileno</h2>
+      <p>La Confederación impulsa la incorporación de tecnología, sostenibilidad y comercialización digital en la Agricultura Familiar Campesina.</p>
+      <span class="agro-badge">⚠ Sección en definición — pendiente de contenido real</span>
+    </div>
+    <div class="agro-grid">
+      <div class="agro-card reveal">
+        <div class="ic">🌱</div>
+        <h3>Bioinsumos</h3>
+        <p>Fomento de insumos agrícolas sostenibles y de menor impacto ambiental para la agricultura familiar.</p>
+      </div>
+      <div class="agro-card reveal d1">
+        <div class="ic">🛰️</div>
+        <h3>Cultivos Inteligentes</h3>
+        <p>Acceso a herramientas de monitoreo y tecnología aplicada a la pequeña y mediana producción.</p>
+      </div>
+      <div class="agro-card reveal d2">
+        <div class="ic">🛒</div>
+        <h3>Comercialización Digital</h3>
+        <p>Conectamos a los productores campesinos con canales de venta directa y mercados digitales.</p>
+      </div>
+      <div class="agro-card reveal d3">
+        <div class="ic">♻️</div>
+        <h3>Sostenibilidad</h3>
+        <p>Prácticas productivas que cuidan el suelo, el agua y los recursos naturales del territorio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENTOS ===== -->
+<section class="section eventos" id="eventos">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Últimas Actividades</span>
+      <h2>La Confederación en acción</h2>
+      <p>Encuentros, asambleas y actividades que reúnen a la Agricultura Familiar Campesina de todo el país.</p>
+    </div>
+    <div class="ev-grid">
+      <div class="ev-card reveal">
+        <div class="ev-img"><img src="assets/img/eventos/evento1.jpg" alt="Asamblea Nacional 2026, La Ligua"></div>
+        <div class="ev-body"><div class="date">Junio 2026 · La Ligua, Región de Valparaíso</div><h3>Asamblea Nacional 2026 — Provincia de Petorca</h3><p>Encuentro nacional de dirigentes campesinos con foco en fortalecimiento institucional, asistencia técnica e innovación tecnológica para la Agricultura Familiar Campesina.</p></div>
+      </div>
+      <div class="ev-card reveal d1">
+        <div class="ev-img"><div class="ph-ic">📸</div><div class="ph-note">Foto pendiente</div></div>
+        <div class="ev-body"><div class="date">Evento reciente</div><h3>Título del evento</h3><p>Descripción breve de la actividad realizada por la Confederación. Se completará con el contenido real entregado.</p></div>
+      </div>
+      <div class="ev-card reveal d2">
+        <div class="ev-img"><div class="ph-ic">📸</div><div class="ph-note">Foto pendiente</div></div>
+        <div class="ev-body"><div class="date">Evento reciente</div><h3>Título del evento</h3><p>Descripción breve de la actividad realizada por la Confederación. Se completará con el contenido real entregado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section class="section contacto" id="contacto">
+  <div class="container cont-grid">
+    <div class="cont-info reveal">
+      <span class="sec-eyebrow">Contacto</span>
+      <h2>Conversemos sobre el campo</h2>
+      <p>¿Eres productor, dirigente o representas a una organización campesina? Escríbenos y súmate a la red que representa a la Agricultura Familiar Campesina de Chile.</p>
+      <div class="cont-item"><div class="ic">✉️</div><div class="txt"><strong>Correo</strong><span>contacto@vozdelcampo.cl</span></div></div>
+      <div class="cont-item"><div class="ic">📞</div><div class="txt"><strong>Teléfono</strong><span>Por confirmar</span></div></div>
+      <div class="cont-item"><div class="ic">📍</div><div class="txt"><strong>Ubicación</strong><span>Chile · Presencia nacional</span></div></div>
+    </div>
+    <form class="cont-form reveal d2" onsubmit="handleSubmit(event)">
+      <h3>Escríbenos</h3>
+      <p class="sub">Te responderemos a la brevedad.</p>
+      <div class="field"><label for="nombre">Nombre completo</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required></div>
+      <div class="field"><label for="email">Correo electrónico</label><input type="email" id="email" name="email" placeholder="tu@correo.cl" required></div>
+      <div class="field"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea></div>
+      <button type="submit" class="btn btn-primary">Enviar mensaje <span class="arw">→</span></button>
+      <p class="form-note">Al enviar aceptas ser contactado por la Confederación La Voz del Campo.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="foot-brand"><div class="m">VC</div><strong>La Voz del Campo</strong></div>
+      <p>Confederación Nacional de la Agricultura Familiar Campesina. Fundada el 4 de noviembre de 1991. Representando al campo chileno.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navegación</h4>
+      <a href="#somos">Quiénes Somos</a>
+      <a href="#directorio">Directorio</a>
+      <a href="#eventos">Actividades</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contacto</h4>
+      <a href="mailto:contacto@vozdelcampo.cl">contacto@vozdelcampo.cl</a>
+      <a href="#">Chile · Nacional</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Confederación La Voz del Campo Chile. Todos los derechos reservados.</span>
+    <span>Sitio desarrollado por <a href="#" style="color:var(--oro-cla);">Propósito 180 Consulting</a></span>
+  </div>
+</footer>
+
+<script>
+// Hero carousel — cross-fade automático
+(function(){
+  const slides = document.querySelectorAll('#heroCarousel .hero-slide');
+  if(!slides.length) return;
+  let i = 0;
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 5000);
+})();
+
+// Navbar scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold:0.12, rootMargin:'0px 0px -60px 0px' });
+document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el));
+
+// Form (placeholder — conectar a Formspree o correo real)
+function handleSubmit(e){
+  e.preventDefault();
+  alert('Formulario de demostración. Se conectará al correo institucional de la Confederación al configurar el hosting.');
+  e.target.reset();
+}
+</script>
+</body>
+</html>

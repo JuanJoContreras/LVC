@@ -297,24 +297,24 @@ a{text-decoration:none;color:inherit;}
 .obj-item h3{ font-size:15px; letter-spacing:.5px; color:var(--verde-osc); font-weight:700; margin-bottom:12px; text-transform:uppercase; }
 .obj-item p{ font-size:14px; color:var(--gris); line-height:1.7; }
 
-/* ===== AGROTECH ===== */
-.agrotech{ background:var(--blanco); position:relative; }
-.agro-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
-.agro-card{
+/* ===== RUTA DIGITAL ===== */
+.ruta{ background:var(--blanco); position:relative; }
+.ruta-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
+.ruta-card{
   background:var(--crema); border:1px solid var(--linea); border-radius:16px;
-  padding:30px 26px; transition:.3s;
+  padding:30px 26px; transition:.3s; position:relative;
 }
-.agro-card:hover{ transform:translateY(-4px); box-shadow:0 20px 44px -20px rgba(27,51,36,.28); border-color:var(--oro); }
-.agro-card .ic{
-  width:52px; height:52px; border-radius:12px; background:var(--verde-cla);
-  display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:16px;
+.ruta-card:hover{ transform:translateY(-4px); box-shadow:0 20px 44px -20px rgba(27,51,36,.28); border-color:var(--oro); }
+.ruta-card .num{
+  width:44px; height:44px; border-radius:50%; background:var(--verde-osc); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700;
+  font-family:'Fraunces',serif; margin-bottom:16px;
 }
-.agro-card h3{ font-size:19px; color:var(--verde-osc); margin-bottom:8px; font-weight:600; }
-.agro-card p{ font-size:14px; color:var(--gris); line-height:1.65; }
-.agro-badge{
-  display:inline-flex; align-items:center; gap:8px; background:var(--verde-cla); color:var(--verde-osc);
-  font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
-  padding:8px 16px; border-radius:20px; margin-top:12px;
+.ruta-card h3{ font-size:18px; color:var(--verde-osc); margin-bottom:8px; font-weight:600; }
+.ruta-card p{ font-size:14px; color:var(--gris); line-height:1.65; }
+.ruta-close{
+  text-align:center; margin-top:36px; padding:24px 30px; background:var(--verde-osc); border-radius:16px;
+  color:#fff; font-size:15px; line-height:1.7;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -354,7 +354,7 @@ a{text-decoration:none;color:inherit;}
     <a href="#somos">Quiénes Somos</a>
     <a href="#directorio">Directorio</a>
     <a href="#eventos">Actividades</a>
-    <a href="#agrotech">Agrotech</a>
+    <a href="#ruta-digital">Nuestra Ruta Digital</a>
     <a href="#contacto" class="nav-cta">Contáctanos</a>
   </div>
   <div class="nav-toggle" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">
@@ -560,36 +560,48 @@ a{text-decoration:none;color:inherit;}
   </div>
 </section>
 
-<!-- ===== AGROTECH (pendiente de definición final) ===== -->
-<section class="section agrotech" id="agrotech">
+<!-- ===== NUESTRA RUTA DIGITAL ===== -->
+<section class="section ruta" id="ruta-digital">
   <div class="container">
     <div class="sec-head center reveal">
-      <span class="sec-eyebrow">Hacia la Agrotech</span>
-      <h2>Modernizando el campo chileno</h2>
-      <p>La Confederación impulsa la incorporación de tecnología, sostenibilidad y comercialización digital en la Agricultura Familiar Campesina.</p>
-      <span class="agro-badge">⚠ Sección en definición — pendiente de contenido real</span>
+      <span class="sec-eyebrow">Estrategia Digital · Fase 1</span>
+      <h2>Nuestra ruta hacia una presencia digital a la altura de nuestra historia</h2>
+      <p>34 años de trabajo territorial, representando al 92% de las explotaciones agrícolas familiares y al 40% de los alimentos que produce Chile, exigían una casa propia en internet. Este es el camino que seguimos para construirla.</p>
     </div>
-    <div class="agro-grid">
-      <div class="agro-card reveal">
-        <div class="ic">🌱</div>
-        <h3>Bioinsumos</h3>
-        <p>Fomento de insumos agrícolas sostenibles y de menor impacto ambiental para la agricultura familiar.</p>
+    <div class="ruta-grid">
+      <div class="ruta-card reveal">
+        <div class="num">01</div>
+        <h3>Identidad Digital Propia</h3>
+        <p>Nuestra dirección oficial vozdelcampo.cl: un espacio 100% propio, sin publicidad ajena ni dependencias, para presentarnos con dignidad institucional ante ministerios, INDAP y medios.</p>
       </div>
-      <div class="agro-card reveal d1">
-        <div class="ic">🛰️</div>
-        <h3>Cultivos Inteligentes</h3>
-        <p>Acceso a herramientas de monitoreo y tecnología aplicada a la pequeña y mediana producción.</p>
+      <div class="ruta-card reveal d1">
+        <div class="num">02</div>
+        <h3>Historia y Misión</h3>
+        <p>Presentación clara de la Confederación desde su fundación en 1991 y de nuestro propósito: defender a la Agricultura Familiar Campesina en todo Chile.</p>
       </div>
-      <div class="agro-card reveal d2">
-        <div class="ic">🛒</div>
-        <h3>Comercialización Digital</h3>
-        <p>Conectamos a los productores campesinos con canales de venta directa y mercados digitales.</p>
+      <div class="ruta-card reveal d2">
+        <div class="num">03</div>
+        <h3>El Rostro de la Confederación</h3>
+        <p>Incorporamos a la mesa directiva con fotografías, nombres y cargos, humanizando a la organización: detrás de La Voz del Campo hay personas reales.</p>
       </div>
-      <div class="agro-card reveal d3">
-        <div class="ic">♻️</div>
-        <h3>Sostenibilidad</h3>
-        <p>Prácticas productivas que cuidan el suelo, el agua y los recursos naturales del territorio.</p>
+      <div class="ruta-card reveal d3">
+        <div class="num">04</div>
+        <h3>Mostrar la Confederación en Acción</h3>
+        <p>Sección dedicada a las últimas actividades, encuentros y asambleas, demostrando a nivel nacional e internacional que somos una organización vigente.</p>
       </div>
+      <div class="ruta-card reveal">
+        <div class="num">05</div>
+        <h3>Abrir un Canal de Contacto</h3>
+        <p>Un formulario directo y datos institucionales claros, para que productores, dirigentes y organizaciones de todo Chile tengan una vía fácil para sumarse.</p>
+      </div>
+      <div class="ruta-card reveal d1">
+        <div class="num">06</div>
+        <h3>Funcionamiento en Cualquier Dispositivo</h3>
+        <p>Arquitectura optimizada para celulares y computadores, fundamental para que nuestra voz llegue a quienes navegan mayoritariamente desde su teléfono en el territorio.</p>
+      </div>
+    </div>
+    <div class="ruta-close reveal">
+      "El campo chileno alimenta al país. Ahora, su voz también se escucha en toda la red."
     </div>
   </div>
 </section>

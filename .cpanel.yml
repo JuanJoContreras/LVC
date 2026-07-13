@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/lavozdel/public_html
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R privacidad.html $DEPLOYPATH
+    - /bin/cp -R favicon.ico $DEPLOYPATH
+    - /bin/cp -R favicon.png $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH

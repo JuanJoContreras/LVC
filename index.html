@@ -57,13 +57,12 @@ a{text-decoration:none;color:inherit;}
 }
 .nav .brand{ display:flex; align-items:center; gap:12px; }
 .nav .brand-mark{
-  width:44px; height:44px; border-radius:50%;
-  background:var(--oro); color:var(--verde-osc);
+  width:44px; height:44px;
   display:flex; align-items:center; justify-content:center;
   font-family:'Fraunces',serif; font-weight:700; font-size:17px;
-  flex-shrink:0; overflow:hidden;
+  flex-shrink:0;
 }
-.nav .brand-mark img{ width:100%; height:100%; object-fit:cover; }
+.nav .brand-mark img{ width:100%; height:100%; object-fit:contain; }
 .nav .brand-text{ color:#fff; line-height:1.15; }
 .nav .brand-text strong{ display:block; font-size:15px; font-weight:600; letter-spacing:.3px; }
 .nav .brand-text span{ display:block; font-size:10px; color:var(--verde-cla); letter-spacing:1.5px; text-transform:uppercase; }
@@ -278,8 +277,8 @@ a{text-decoration:none;color:inherit;}
 .footer{ background:var(--verde-prof); color:rgba(255,255,255,.75); padding:56px 40px 30px; }
 .foot-grid{ max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:44px; padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,.1); }
 .foot-brand{ display:flex; align-items:center; gap:12px; margin-bottom:18px; }
-.foot-brand .m{ width:44px; height:44px; border-radius:50%; background:var(--oro); color:var(--verde-osc); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; overflow:hidden; flex-shrink:0; }
-.foot-brand .m img{ width:100%; height:100%; object-fit:cover; }
+.foot-brand .m{ width:44px; height:44px; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; flex-shrink:0; }
+.foot-brand .m img{ width:100%; height:100%; object-fit:contain; }
 .foot-social{ display:flex; gap:10px; margin-top:16px; }
 .foot-social a{
   width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.08);
@@ -451,43 +450,39 @@ a{text-decoration:none;color:inherit;}
     <div class="dir-grid">
       <!-- Reemplazar ph-placeholder por <img src="..."> cuando lleguen las fotos reales -->
       <div class="dir-card reveal">
-        <div class="dir-photo"><img src="assets/img/directorio/patricia_molina.jpg" alt="Patricia Molina"></div>
-        <div class="dir-info"><div class="name">Patricia Molina</div><div class="role">Presidenta</div><div class="region">Confederación Nacional</div></div>
+        <div class="dir-photo"><img src="assets/img/directorio/patricia_molina.jpg" alt="Aurea Patricia Molina Martínez"></div>
+        <div class="dir-info"><div class="name">Aurea Patricia Molina Martínez</div><div class="role">Presidenta</div><div class="region">Confederación Nacional</div></div>
       </div>
       <div class="dir-card reveal d1">
-        <div class="dir-photo"><div class="ph-placeholder">DM</div><div class="ph-note">Foto pendiente</div></div>
-        <div class="dir-info"><div class="name">Domingo Medina</div><div class="role">Vicepresidente</div><div class="region">—</div></div>
+        <div class="dir-photo"><img src="assets/img/directorio/cecilia_alfaro.jpg" alt="Cecilia del Carmen Alfaro González"></div>
+        <div class="dir-info"><div class="name">Cecilia del Carmen Alfaro González</div><div class="role">Vicepresidenta</div><div class="region">—</div></div>
       </div>
       <div class="dir-card reveal d2">
-        <div class="dir-photo"><img src="assets/img/directorio/domingo_valenzuela.jpg" alt="Domingo Valenzuela"></div>
-        <div class="dir-info"><div class="name">Domingo Valenzuela</div><div class="role">Secretario General</div><div class="region">—</div></div>
+        <div class="dir-photo"><img src="assets/img/directorio/alfredo_llafquen.jpg" alt="Alfredo Enrique Llafquén Huilipán"></div>
+        <div class="dir-info"><div class="name">Alfredo Enrique Llafquén Huilipán</div><div class="role">Secretario General</div><div class="region">—</div></div>
       </div>
       <div class="dir-card reveal d3">
-        <div class="dir-photo"><img src="assets/img/directorio/jose_valencia.jpg" alt="José Valencia"></div>
-        <div class="dir-info"><div class="name">José Valencia</div><div class="role">Tesorero</div><div class="region">—</div></div>
+        <div class="dir-photo"><img src="assets/img/directorio/jose_valencia.jpg" alt="José Santiago Valencia Valencia"></div>
+        <div class="dir-info"><div class="name">José Santiago Valencia Valencia</div><div class="role">Tesorero</div><div class="region">—</div></div>
       </div>
       <div class="dir-card reveal">
-        <div class="dir-photo"><div class="ph-placeholder">RS</div><div class="ph-note">Foto pendiente</div></div>
-        <div class="dir-info"><div class="name">Rosa Sanhueza</div><div class="role">Directora</div><div class="region">—</div></div>
+        <div class="dir-photo"><img src="assets/img/directorio/domingo_valenzuela.jpg" alt="Domingo Humberto Valenzuela Mancilla"></div>
+        <div class="dir-info"><div class="name">Domingo Humberto Valenzuela Mancilla</div><div class="role">Director</div><div class="region">—</div></div>
       </div>
       <div class="dir-card reveal d1">
-        <div class="dir-photo"><div class="ph-placeholder">LM</div><div class="ph-note">Foto pendiente</div></div>
-        <div class="dir-info"><div class="name">Luis Molina</div><div class="role">Director</div><div class="region">—</div></div>
+        <div class="dir-photo"><img src="assets/img/directorio/margarita_briones.jpg" alt="Margarita Briones Vilches"></div>
+        <div class="dir-info"><div class="name">Margarita Briones Vilches</div><div class="role">Directora</div><div class="region">—</div></div>
       </div>
       <div class="dir-card reveal d2">
-        <div class="dir-photo"><img src="assets/img/directorio/elvira_figueroa.jpg" alt="Elvira Figueroa"></div>
-        <div class="dir-info"><div class="name">Elvira Figueroa</div><div class="role">Directora</div><div class="region">—</div></div>
+        <div class="dir-photo"><img src="assets/img/directorio/sergio_llafquen.jpg" alt="Sergio Armando Llafquén Huilipán"></div>
+        <div class="dir-info"><div class="name">Sergio Armando Llafquén Huilipán</div><div class="role">Director</div><div class="region">—</div></div>
       </div>
       <div class="dir-card reveal d3">
-        <div class="dir-photo"><img src="assets/img/directorio/sergio_llafquen.jpg" alt="Sergio Llafquén"></div>
-        <div class="dir-info"><div class="name">Sergio Llafquén</div><div class="role">Director</div><div class="region">—</div></div>
-      </div>
-      <div class="dir-card reveal">
-        <div class="dir-photo"><img src="assets/img/directorio/marco_molina.jpg" alt="Marco Molina"></div>
-        <div class="dir-info"><div class="name">Marco Molina</div><div class="role">Director</div><div class="region">—</div></div>
+        <div class="dir-photo"><div class="ph-placeholder">MG</div><div class="ph-note">Foto pendiente</div></div>
+        <div class="dir-info"><div class="name">María Inés Garrido Molina</div><div class="role">Directora</div><div class="region">—</div></div>
       </div>
     </div>
-    <p style="text-align:center;margin-top:28px;font-size:13px;color:var(--gris);font-style:italic;">Faltan las fotos de Domingo Medina, Rosa Sanhueza y Luis Molina.</p>
+    <p style="text-align:center;margin-top:28px;font-size:13px;color:var(--gris);font-style:italic;">Falta la foto de María Inés Garrido Molina.</p>
   </div>
 </section>
 

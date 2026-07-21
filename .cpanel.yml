@@ -6,4 +6,5 @@ deployment:
     - /bin/cp -R privacidad.html $DEPLOYPATH
     - /bin/cp -R favicon.ico $DEPLOYPATH
     - /bin/cp -R favicon.png $DEPLOYPATH
+    - /bin/cp -R googleb2b43bccdec9eb5f.html $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH

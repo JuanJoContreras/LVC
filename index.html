@@ -207,6 +207,26 @@ a{text-decoration:none;color:inherit;}
 .dir-info .role{ font-size:13px; color:var(--oro); font-weight:600; margin-top:3px; }
 .dir-info .region{ font-size:12px; color:var(--gris); margin-top:4px; }
 
+/* ===== OBJETIVOS HISTÓRICOS Y ORGANIZACIONES AFILIADAS ===== */
+.historicos{ background:var(--blanco); }
+.hist-grid{ display:grid; grid-template-columns:1fr 1fr; gap:4px 40px; }
+.hist-item{
+  display:flex; gap:12px; align-items:flex-start; padding:16px 0;
+  border-bottom:1px solid var(--linea); font-size:14.5px; color:var(--tinta); line-height:1.6;
+}
+.hist-item .chk{
+  flex-shrink:0; width:24px; height:24px; border-radius:50%;
+  background:var(--verde-cla); color:var(--verde-osc); font-weight:700; font-size:13px;
+  display:flex; align-items:center; justify-content:center; margin-top:1px;
+}
+.afil-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+.afil-item{
+  display:flex; gap:10px; align-items:center;
+  background:var(--crema); border:1px solid var(--linea); border-radius:12px;
+  padding:16px 18px; font-size:13.5px; color:var(--verde-osc); font-weight:600; line-height:1.4;
+}
+.afil-item .ic{ flex-shrink:0; font-size:16px; }
+
 /* ===== NOTICIAS ===== */
 .noticias{ background:var(--blanco); }
 .not-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:28px; }
@@ -347,6 +367,7 @@ a{text-decoration:none;color:inherit;}
   .obj-line{ grid-template-columns:1fr 1fr; gap:36px 24px; }
   .obj-line::before{ display:none; }
   .ruta-grid{ grid-template-columns:repeat(2,1fr); }
+  .hist-grid{ grid-template-columns:1fr; }
 }
 @media (max-width:560px){
   .ruta-grid{ grid-template-columns:1fr; }
@@ -502,7 +523,46 @@ a{text-decoration:none;color:inherit;}
   </div>
 </section>
 
-<!-- ===== NOTICIAS ===== -->
+<!-- ===== OBJETIVOS HISTÓRICOS Y ORGANIZACIONES AFILIADAS ===== -->
+<section class="section historicos" id="historia-organizacion">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="sec-eyebrow">Nuestra Historia</span>
+      <h2>Objetivos Históricos</h2>
+      <p>Los principios fundacionales que han guiado a la Confederación desde 1991.</p>
+    </div>
+    <div class="hist-grid">
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Promover el desarrollo de la Agricultura Familiar Campesina, la valoración de la familia y del trabajo campesino.</span></div>
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Ser la voz de la Agricultura Familiar y representarla en las esferas pública y privada.</span></div>
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Proponer políticas agrarias que sirvan al desarrollo de la Agricultura Familiar.</span></div>
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Estimular el desarrollo de sistemas educativos, tecnológicos, crediticios y de comercialización adecuados a las Empresas Agrícolas Familiares.</span></div>
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Trabajar por que la tierra en poder de la Agricultura Familiar cumpla con su función social. Denunciar toda forma de destrucción de los recursos naturales y del medio ambiente.</span></div>
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Trabajar para que la agro-industria sirva a la pequeña agricultura y para mejorar la comercialización de los productos.</span></div>
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Obtener la legislación adecuada para que la Agricultura Familiar se desarrolle integralmente y adquiera una fisonomía propia. Promover leyes que permitan una vida social digna.</span></div>
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Trabajar por incorporar a los 250 mil agricultores familiares a la Confederación Nacional de la Agricultura Familiar Campesina.</span></div>
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Buscar la forma de mantener un debate agrario abierto y participativo con los protagonistas de las diferentes actividades del medio rural.</span></div>
+      <div class="hist-item reveal"><span class="chk">✓</span><span>Defender y profundizar el sistema democrático como única forma de convivencia, de gobierno y de participación social efectiva. Defender los derechos de las familias y comunidades campesinas.</span></div>
+    </div>
+
+    <div class="sec-head center reveal" style="margin-top:72px;">
+      <span class="sec-eyebrow">Red Nacional</span>
+      <h2>Organizaciones Afiliadas</h2>
+      <p>Federaciones y asociaciones gremiales que forman parte de la Confederación en todo Chile.</p>
+    </div>
+    <div class="afil-grid">
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Federación de Agricultores y Ganaderos de Aysén (FAGA)</div>
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Asociación de Pequeños Agricultores de Chiloé (APACH)</div>
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Federación de Curarrehue, Región de la Araucanía</div>
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Federación Cordillera de Cautín, Región de la Araucanía</div>
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Federación Los Sembradores de Malleco, Región de la Araucanía</div>
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Federación Los Copihues de la Araucanía, Nueva Imperial, Región Araucanía</div>
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Federación Valle Hermoso, Región de Ñuble</div>
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Asociación Gremial de Pequeñas Productoras de Yungay, Región de Ñuble</div>
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Mujeres Productoras de la Agricultura (MUPRO) de La Ligua, Región de Aconcagua</div>
+      <div class="afil-item reveal"><span class="ic">🇨🇱</span>Asociación Gremial Regional de Turismo Rural del Norte Chico, Región de Coquimbo</div>
+    </div>
+  </div>
+</section>
 <section class="section noticias" id="noticias">
   <div class="container">
     <div class="sec-head center reveal">

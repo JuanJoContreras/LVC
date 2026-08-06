@@ -563,7 +563,7 @@ a{text-decoration:none;color:inherit;}
       <span class="sec-eyebrow">Contacto</span>
       <h2>Conversemos sobre el campo</h2>
       <p>¿Eres productor, dirigente o representas a una organización campesina? Escríbenos y súmate a la red que representa a la Agricultura Familiar Campesina de Chile.</p>
-      <div class="cont-item"><div class="ic">✉️</div><div class="txt"><strong>Correo</strong><span>vozdelcampochile@gmail.com</span></div></div>
+      <div class="cont-item"><div class="ic">✉️</div><div class="txt"><strong>Correo</strong><span>contacto@lavozdelcampo.cl</span></div></div>
       <div class="cont-item"><div class="ic">📞</div><div class="txt"><strong>Teléfono</strong><span>123-456-7890</span></div></div>
       <div class="cont-item"><div class="ic">📍</div><div class="txt"><strong>Dirección</strong><span>García Reyes 464, Santiago</span></div></div>
     </div>
@@ -646,7 +646,7 @@ a{text-decoration:none;color:inherit;}
     </div>
     <div class="foot-col">
       <h4>Contacto</h4>
-      <a href="mailto:vozdelcampochile@gmail.com">vozdelcampochile@gmail.com</a>
+      <a href="mailto:contacto@lavozdelcampo.cl">contacto@lavozdelcampo.cl</a>
       <a href="tel:1234567890">123-456-7890</a>
       <a href="#" style="pointer-events:none;">García Reyes 464, Santiago</a>
     </div>
@@ -690,10 +690,17 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold:0.12, rootMargin:'0px 0px -60px 0px' });
 document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el));
 
-// Form (placeholder — conectar a Formspree o correo real)
+// Form → abre el cliente de correo del usuario con destino a la Confederación
 function handleSubmit(e){
   e.preventDefault();
-  alert('Formulario de demostración. Se conectará al correo institucional de la Confederación al configurar el hosting.');
+  const nombre = document.getElementById('nombre').value;
+  const email = document.getElementById('email').value;
+  const mensaje = document.getElementById('mensaje').value;
+  const to = 'contacto@lavozdelcampo.cl';
+  const cc = 'patricia.molina@lavozdelcampo.cl,proposito180@lavozdelcampo.cl';
+  const subject = encodeURIComponent('Contacto desde sitio web — ' + nombre);
+  const body = encodeURIComponent('Nombre: ' + nombre + '\nCorreo: ' + email + '\n\nMensaje:\n' + mensaje);
+  window.location.href = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
   e.target.reset();
 }
 </script>

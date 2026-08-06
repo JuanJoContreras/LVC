@@ -335,6 +335,8 @@ a{text-decoration:none;color:inherit;}
   text-align:center; margin-top:36px; padding:24px 30px; background:var(--verde-osc); border-radius:16px;
   color:#fff; font-size:15px; line-height:1.7;
 }
+.ruta-img{ margin-top:48px; border-radius:20px; overflow:hidden; box-shadow:0 24px 60px -24px rgba(27,51,36,.35); }
+.ruta-img img{ width:100%; height:auto; display:block; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width:900px){
@@ -384,10 +386,9 @@ a{text-decoration:none;color:inherit;}
 <!-- ===== HERO ===== -->
 <header class="hero" id="inicio">
   <div class="hero-carousel" id="heroCarousel">
-    <div class="hero-slide active" style="background-image:url('assets/img/campo1.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('assets/img/campo2.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('assets/img/campo4.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('assets/img/campo6.jpg')"></div>
+    <div class="hero-slide active" style="background-image:url('assets/img/header1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/header2.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/header3.jpg')"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
@@ -407,8 +408,8 @@ a{text-decoration:none;color:inherit;}
       <a href="#somos" class="btn btn-ghost">Conócenos</a>
     </div>
     <div class="hero-stats reveal in d4">
-      <div class="hero-stat"><div class="num">34</div><div class="lab">años de historia gremial</div></div>
-      <div class="hero-stat"><div class="num">+250 mil</div><div class="lab">productores representados</div></div>
+      <div class="hero-stat"><div class="num" data-count data-target="34">0</div><div class="lab">años de historia gremial</div></div>
+      <div class="hero-stat"><div class="num" data-count data-target="250" data-prefix="+" data-suffix=" mil">0</div><div class="lab">productores representados</div></div>
       <div class="hero-stat"><div class="num">Nacional</div><div class="lab">presencia en todas las regiones</div></div>
     </div>
   </div>
@@ -564,7 +565,6 @@ a{text-decoration:none;color:inherit;}
       <h2>Conversemos sobre el campo</h2>
       <p>¿Eres productor, dirigente o representas a una organización campesina? Escríbenos y súmate a la red que representa a la Agricultura Familiar Campesina de Chile.</p>
       <div class="cont-item"><div class="ic">✉️</div><div class="txt"><strong>Correo</strong><span>contacto@lavozdelcampo.cl</span></div></div>
-      <div class="cont-item"><div class="ic">📞</div><div class="txt"><strong>Teléfono</strong><span>123-456-7890</span></div></div>
       <div class="cont-item"><div class="ic">📍</div><div class="txt"><strong>Dirección</strong><span>García Reyes 464, Santiago</span></div></div>
     </div>
     <form class="cont-form reveal d2" onsubmit="handleSubmit(event)">
@@ -619,6 +619,9 @@ a{text-decoration:none;color:inherit;}
         <p>Arquitectura optimizada para celulares y computadores, fundamental para que nuestra voz llegue a quienes navegan mayoritariamente desde su teléfono en el territorio.</p>
       </div>
     </div>
+    <div class="ruta-img reveal">
+      <img src="assets/img/ruta-digital.jpg" alt="De la Voz del Campo a la Voz Digital">
+    </div>
     <div class="ruta-close reveal">
       "El campo chileno alimenta al país. Ahora, su voz también se escucha en toda la red."
     </div>
@@ -647,7 +650,6 @@ a{text-decoration:none;color:inherit;}
     <div class="foot-col">
       <h4>Contacto</h4>
       <a href="mailto:contacto@lavozdelcampo.cl">contacto@lavozdelcampo.cl</a>
-      <a href="tel:1234567890">123-456-7890</a>
       <a href="#" style="pointer-events:none;">García Reyes 464, Santiago</a>
     </div>
     <div class="foot-col">
@@ -677,6 +679,22 @@ a{text-decoration:none;color:inherit;}
     slides[i].classList.add('active');
   }, 5000);
 })();
+
+// Contador animado (números del hero)
+document.querySelectorAll('[data-count]').forEach(el => {
+  const target = parseInt(el.dataset.target, 10);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const duration = 1600;
+  const start = performance.now();
+  function step(now){
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = prefix + Math.round(eased * target) + suffix;
+    if(progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+});
 
 // Navbar scroll effect
 const nav = document.getElementById('nav');

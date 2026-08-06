@@ -318,7 +318,7 @@ a{text-decoration:none;color:inherit;}
 
 /* ===== RUTA DIGITAL ===== */
 .ruta{ background:var(--blanco); position:relative; }
-.ruta-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
+.ruta-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 .ruta-card{
   background:var(--crema); border:1px solid var(--linea); border-radius:16px;
   padding:30px 26px; transition:.3s; position:relative;
@@ -335,7 +335,7 @@ a{text-decoration:none;color:inherit;}
   text-align:center; margin-top:36px; padding:24px 30px; background:var(--verde-osc); border-radius:16px;
   color:#fff; font-size:15px; line-height:1.7;
 }
-.ruta-img{ margin-top:48px; border-radius:20px; overflow:hidden; box-shadow:0 24px 60px -24px rgba(27,51,36,.35); }
+.ruta-img{ margin:48px auto 0; max-width:640px; border-radius:20px; overflow:hidden; box-shadow:0 24px 60px -24px rgba(27,51,36,.35); }
 .ruta-img img{ width:100%; height:auto; display:block; }
 
 /* ===== RESPONSIVE ===== */
@@ -346,6 +346,10 @@ a{text-decoration:none;color:inherit;}
   .nav-toggle{ display:flex; }
   .obj-line{ grid-template-columns:1fr 1fr; gap:36px 24px; }
   .obj-line::before{ display:none; }
+  .ruta-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:560px){
+  .ruta-grid{ grid-template-columns:1fr; }
 }
 @media (max-width:560px){
   .nav, .nav.scrolled{ padding:14px 20px; }

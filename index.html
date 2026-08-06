@@ -118,7 +118,23 @@ a{text-decoration:none;color:inherit;}
 }
 .hero .eyebrow::before{ content:''; width:32px; height:1px; background:var(--oro); }
 .hero-logo{ height:clamp(90px,14vw,180px); width:auto; max-width:100%; object-fit:contain; border-radius:16px; flex-shrink:0; }
-@media (max-width:900px){ .hero-top{ flex-direction:column; align-items:center; text-align:center; } .hero-logo{ order:-1; margin:0 auto 16px; } }
+@media (max-width:900px){ .hero-top{ flex-direction:column; align-items:center; text-align:center; } }
+
+/* ===== BADGE 34 AÑOS (bajo el logo del hero) ===== */
+.hero-brandcol{ display:flex; flex-direction:column; align-items:center; gap:16px; flex-shrink:0; }
+.badge34{ text-align:center; color:#fff; }
+.badge34 .b34-row{ display:flex; align-items:center; justify-content:center; gap:10px; }
+.badge34 .b34-num{ font-family:'Fraunces',serif; font-weight:600; font-size:clamp(52px,6vw,76px); line-height:.9; color:#fff; }
+.badge34 .b34-txt{ font-family:'Fraunces',serif; font-weight:500; font-size:clamp(20px,2.2vw,28px); line-height:1.05; text-align:left; color:#fff; }
+.badge34 .b34-rule{ display:flex; align-items:center; gap:8px; margin:10px 0 8px; color:var(--oro-cla); font-size:11px; }
+.badge34 .b34-rule::before, .badge34 .b34-rule::after{ content:''; flex:1; height:1px; background:var(--oro); opacity:.75; }
+.badge34 .b34-sub{ font-family:'Fraunces',serif; font-size:clamp(13px,1.3vw,17px); color:var(--oro-cla); letter-spacing:.01em; }
+@media (max-width:900px){
+  .hero-brandcol{ order:-1; margin:0 auto 18px; }
+  .badge34 .b34-num{ font-size:58px; }
+  .badge34 .b34-txt{ font-size:22px; }
+  .badge34 .b34-sub{ font-size:14px; }
+}
 .hero h1{
   font-size:clamp(38px,6vw,74px); color:#fff; max-width:14ch;
   margin-bottom:26px; font-weight:600;
@@ -455,7 +471,14 @@ a{text-decoration:none;color:inherit;}
         <div class="eyebrow">Confederación Nacional de la Agricultura Familiar Campesina</div>
         <h1 class="reveal in d1">La voz de quienes <em>alimentan a Chile</em> desde el campo.</h1>
       </div>
-      <img src="assets/img/logo-vozdelcampo.png" alt="La Voz del Campo" class="hero-logo">
+      <div class="hero-brandcol">
+        <img src="assets/img/logo-vozdelcampo.png" alt="La Voz del Campo" class="hero-logo">
+        <div class="badge34">
+          <div class="b34-row"><span class="b34-num">34</span><span class="b34-txt">años de<br>historia</span></div>
+          <div class="b34-rule"><span>&#10086;</span></div>
+          <div class="b34-sub">Confederación La Voz del Campo</div>
+        </div>
+      </div>
     </div>
     <p class="lede reveal in d2">
       Desde 1991 representamos a los pequeños productores campesinos e indígenas de todo el territorio nacional,
@@ -466,7 +489,6 @@ a{text-decoration:none;color:inherit;}
       <a href="#somos" class="btn btn-ghost">Conócenos</a>
     </div>
     <div class="hero-stats reveal in d4">
-      <div class="hero-stat"><div class="num" data-count data-target="34">0</div><div class="lab">años de historia gremial</div></div>
       <div class="hero-stat"><div class="num" data-count data-target="250" data-prefix="+" data-suffix=" mil">0</div><div class="lab">productores representados</div></div>
       <div class="hero-stat"><div class="num">Nacional</div><div class="lab">presencia en todas las regiones</div></div>
     </div>
@@ -643,12 +665,12 @@ a{text-decoration:none;color:inherit;}
         <div class="ev-body"><div class="date">Junio 2026 · La Ligua, Región de Valparaíso</div><h3>Asamblea Nacional 2026 — Provincia de Petorca</h3><p>Encuentro nacional de dirigentes campesinos con foco en fortalecimiento institucional, asistencia técnica e innovación tecnológica para la Agricultura Familiar Campesina.</p></div>
       </div>
       <div class="ev-card reveal d1">
-        <div class="ev-img"><div class="ph-ic">📸</div><div class="ph-note">Foto pendiente</div></div>
-        <div class="ev-body"><div class="date">Evento reciente</div><h3>Título del evento</h3><p>Descripción breve de la actividad realizada por la Confederación. Se completará con el contenido real entregado.</p></div>
+        <div class="ev-img"><img src="assets/img/eventos/evento2.jpg" alt="Dirigentes de la Confederación La Voz del Campo"></div>
+        <div class="ev-body"><div class="date">Evento reciente</div><h3>Encuentro de dirigentes</h3><p>Reunión de dirigentes de la Confederación para coordinar el trabajo territorial y fortalecer la representación de la Agricultura Familiar Campesina.</p></div>
       </div>
       <div class="ev-card reveal d2">
-        <div class="ev-img"><div class="ph-ic">📸</div><div class="ph-note">Foto pendiente</div></div>
-        <div class="ev-body"><div class="date">Evento reciente</div><h3>Título del evento</h3><p>Descripción breve de la actividad realizada por la Confederación. Se completará con el contenido real entregado.</p></div>
+        <div class="ev-img"><img src="assets/img/eventos/evento3.jpg" alt="Próxima actividad de la Confederación"><div class="ph-note">Próxima actividad en proceso</div></div>
+        <div class="ev-body"><div class="date">Próxima actividad</div><h3>Próxima actividad en proceso</h3><p>Estamos preparando nuevas instancias de encuentro, formación y colaboración para seguir fortaleciendo el campo chileno.</p></div>
       </div>
     </div>
   </div>

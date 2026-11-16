@@ -407,6 +407,15 @@ a{text-decoration:none;color:inherit;}
   .foot-grid, .foot-grid-4{ grid-template-columns:1fr !important; gap:28px; }
 }
 
+/* ===== REVISTA DIGITAL ===== */
+.revista{ background:var(--crema); }
+.rev-grid{ display:grid; grid-template-columns:.8fr 1.2fr; gap:56px; align-items:center; }
+.rev-cover{ border-radius:18px; overflow:hidden; box-shadow:0 30px 70px -26px rgba(27,51,36,.4); }
+.rev-cover img{ width:100%; display:block; }
+.rev-info h2{ font-size:clamp(26px,3.6vw,38px); color:var(--verde-osc); margin-bottom:16px; }
+.rev-info p{ font-size:16px; color:var(--gris); line-height:1.75; margin-bottom:26px; }
+.rev-info .ed{ font-size:13px; color:var(--oro); font-weight:700; letter-spacing:.5px; text-transform:uppercase; margin-bottom:10px; display:block; }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width:900px){
   .somos-grid, .cont-grid{ grid-template-columns:1fr; gap:40px; }
@@ -428,6 +437,7 @@ a{text-decoration:none;color:inherit;}
   .hero-stats{ gap:28px; }
   .hero-stat .num{ font-size:30px; }
   .somos-highlights{ grid-template-columns:1fr; }
+  .rev-grid{ grid-template-columns:1fr; }
   .foot-grid{ grid-template-columns:1fr; gap:30px; }
   .cont-form{ padding:26px 22px; }
   .obj-line{ grid-template-columns:1fr; }
@@ -450,6 +460,7 @@ a{text-decoration:none;color:inherit;}
     <a href="#directorio">Directorio</a>
     <a href="#eventos">Actividades</a>
     <a href="#ruta-digital">Nuestra Ruta Digital</a>
+    <a href="#revista">Revista</a>
     <a href="#contacto" class="nav-cta">Contáctanos</a>
   </div>
   <div class="nav-toggle" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">
@@ -743,6 +754,21 @@ a{text-decoration:none;color:inherit;}
     </div>
     <div class="ruta-close reveal">
       "El campo chileno alimenta al país. Ahora, su voz también se escucha en toda la red."
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVISTA DIGITAL ===== -->
+<section class="section revista" id="revista">
+  <div class="container rev-grid">
+    <div class="rev-cover reveal">
+      <img src="assets/img/revista-portada.jpg" alt="Revista Voz del Campo — Edición N°7, agosto 2026">
+    </div>
+    <div class="rev-info reveal d2">
+      <span class="ed">Edición N° 7 · Agosto 2026</span>
+      <h2>Nuestra Revista Digital</h2>
+      <p>La agricultura familiar campesina como pilar fundamental para erradicar el hambre, asegurar la soberanía alimentaria y conservar la biodiversidad. En esta edición: entrevista a la presidenta Patricia Molina, el futuro del turismo rural y la voz de las dirigentas.</p>
+      <a href="assets/docs/revista-agosto-2026.pdf" target="_blank" rel="noopener" class="btn btn-primary">Ver revista completa <span class="arw">→</span></a>
     </div>
   </div>
 </section>

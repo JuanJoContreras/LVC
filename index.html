@@ -393,12 +393,13 @@ a{text-decoration:none;color:inherit;}
   .nav{ position:fixed; padding:14px 20px; background:rgba(20,38,27,.92); backdrop-filter:blur(10px); }
 }
 @media (max-width:900px){
-  .hero{ min-height:auto; padding:88px 22px 48px; align-items:flex-start; }
-  .hero-carousel{ background:var(--verde-prof); }
-  .hero-slide{ background-size:cover; background-position:center top; }
-  .slide-montaje{ background-size:100% 100%,cover; background-position:center top,center top; }
+  .hero{ min-height:auto; padding:calc(72px + 43vw + 28px) 22px 48px; align-items:flex-start; }
+  .hero-carousel{ inset:auto; top:72px; left:0; right:0; height:43vw; background:var(--verde-prof); }
+  .hero-slide{ background-size:cover; background-position:center; }
+  .slide-montaje{ background-image:url('assets/img/header1.jpg'); background-size:cover; background-position:center; }
   .hero-overlay{
-    background:linear-gradient(to bottom, rgba(27,51,36,.18) 0%, rgba(27,51,36,.42) 30%, rgba(22,44,31,.82) 58%, rgba(20,38,27,.94) 100%);
+    inset:auto; top:72px; left:0; right:0; height:43vw;
+    background:linear-gradient(to bottom, rgba(20,38,27,0) 55%, rgba(20,38,27,.9) 100%);
   }
   .hero::after{ display:none; }
   .hero-logo{ height:clamp(80px,22vw,120px); }

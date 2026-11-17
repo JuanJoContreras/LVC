@@ -95,6 +95,7 @@ a{text-decoration:none;color:inherit;}
   opacity:0; transition:opacity 1.6s ease-in-out;
 }
 .hero-slide.active{ opacity:1; }
+.slide-montaje{ background-image:linear-gradient(to bottom,var(--verde-prof) 0%,rgba(35,44,28,0) 40%),url('assets/img/header1.jpg'); background-size:100% auto; background-position:center bottom; background-repeat:no-repeat; background-color:var(--verde-prof); }
 .hero-overlay{
   position:absolute; inset:0; z-index:1;
   background:linear-gradient(100deg, rgba(20,38,27,.93) 0%, rgba(22,44,31,.86) 38%, rgba(27,51,36,.42) 56%, rgba(27,51,36,.05) 70%, rgba(27,51,36,0) 100%);
@@ -395,6 +396,7 @@ a{text-decoration:none;color:inherit;}
   .hero{ min-height:auto; padding:88px 22px 48px; align-items:flex-start; }
   .hero-carousel{ background:var(--verde-prof); }
   .hero-slide{ background-size:cover; background-position:center top; }
+  .slide-montaje{ background-size:auto 100%,cover; background-position:center top; }
   .hero-overlay{
     background:linear-gradient(to bottom, rgba(27,51,36,.18) 0%, rgba(27,51,36,.42) 30%, rgba(22,44,31,.82) 58%, rgba(20,38,27,.94) 100%);
   }
@@ -471,7 +473,7 @@ a{text-decoration:none;color:inherit;}
 <!-- ===== HERO ===== -->
 <header class="hero" id="inicio">
   <div class="hero-carousel" id="heroCarousel">
-    <div class="hero-slide active" style="background-image:url('assets/img/header1.jpg')"></div>
+    <div class="hero-slide slide-montaje active"></div>
     <div class="hero-slide" style="background-image:url('assets/img/header2.jpg')"></div>
     <div class="hero-slide" style="background-image:url('assets/img/header3.jpg')"></div>
   </div>
